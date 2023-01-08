@@ -7,6 +7,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.OverworldBiomeCreator;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -14,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static net.fluffybumblebee.better_meadows.world.feature.BMPlaced.MEADOW_BUSH;
 import static net.minecraft.world.gen.feature.DefaultBiomeFeatures.*;
 
 @Mixin(OverworldBiomeCreator.class)
@@ -36,7 +38,7 @@ public class OverworldBiomeCreatorMixin {
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         addBatsAndMonsters(spawnBuilder);
         addBasicFeatures(generationBuilder);
-        MeadowDefaults.addLargeMeadowFeatures(generationBuilder);
+        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_BUSH);
         addPlainsTallGrass(generationBuilder);
         addForestFlowers(generationBuilder);
         addDefaultGrass(generationBuilder);
