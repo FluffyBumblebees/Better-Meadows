@@ -14,7 +14,7 @@
   },
 
   "license": "LGPL-3.0",
-  "icon": "assets/maple_forest/logo.png",
+  "icon": "assets/better_meadows/logo.png",
 
   "environment": "*",
   "entrypoints": {
