@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "better_meadows",
+  "version": "${version}",
+
+  "name": "Better Meadows",
+  "description": "Meadow improvement mod. Inspired off of 1.12.2 BOP's depiction of what constitutes a meadow.",
+  "authors": [
+    "Fluffy bumblebee",
+    "IIpho3nix"
+  ],
+  "contact": {
+    "sources": "https://github.com/FluffyBumblebees/MAKEAREPO"
+  },
+
+  "license": "LGPL-3.0",
+  "icon": "assets/maple_forest/logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fluffybumblebee.better_meadows.BetterMeadows"
+    ],
+    "terrablender": [
+      "net.fluffybumblebee.better_meadows.world.gen.BMBiomeGeneration"
+    ]
+  },
+  "mixins": [
+    "better_meadows.mixins.json"
+  ],
+  "accessWidener": "better_meadows.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "terrablender": "*",
+    "minecraft": "~1.18.2",
+    "java": ">=17"
+  }
+}
