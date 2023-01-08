@@ -6,6 +6,10 @@ import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.BiomeEffects;
+import net.minecraft.world.biome.GenerationSettings;
+import net.minecraft.world.gen.GenerationStep;
+
+import static net.fluffybumblebee.better_meadows.world.feature.BMPlaced.*;
 
 public class MeadowDefaults {
     private static int getSkyColor(@SuppressWarnings("SameParameterValue") float temperature) {
@@ -27,4 +31,13 @@ public class MeadowDefaults {
             .moodSound(BiomeMoodSound.CAVE)
             .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_MEADOW))
             .build();
+
+    public static void addLargeMeadowFeatures(GenerationSettings.Builder generationBuilder) {
+        generationBuilder.feature(GenerationStep.Feature.FLUID_SPRINGS, MEADOW_LAKE);
+        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, HUGE_BROWN_MUSHROOM);
+        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, HUGE_RED_MUSHROOM);
+        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_SPRUCE);
+        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_SPRUCE_SPARSE);
+        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_BUSH);
+    }
 }

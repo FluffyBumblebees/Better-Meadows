@@ -1,7 +1,6 @@
 package net.fluffybumblebee.better_meadows.mixin;
 
 import net.fluffybumblebee.better_meadows.util.MeadowDefaults;
-import net.fluffybumblebee.better_meadows.world.feature.BMPlaced;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.Biome;
@@ -37,7 +36,7 @@ public class OverworldBiomeCreatorMixin {
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         addBatsAndMonsters(spawnBuilder);
         addBasicFeatures(generationBuilder);
-        BMPlaced.addLargeMeadowFeatures(generationBuilder);
+        MeadowDefaults.addLargeMeadowFeatures(generationBuilder);
         addPlainsTallGrass(generationBuilder);
         addForestFlowers(generationBuilder);
         addDefaultGrass(generationBuilder);

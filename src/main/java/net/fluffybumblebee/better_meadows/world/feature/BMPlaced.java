@@ -3,9 +3,10 @@ package net.fluffybumblebee.better_meadows.world.feature;
 import net.fluffybumblebee.better_meadows.BetterMeadows;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.biome.GenerationSettings;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.PlacedFeature;
+import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
+import net.minecraft.world.gen.feature.VegetationConfiguredFeatures;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
 import java.util.List;
@@ -58,10 +59,16 @@ public class BMPlaced {
             modifiers(createCountExtraModifier(0, 0.1f, 20))
     );
 
-    public static void addLargeMeadowFeatures(GenerationSettings.Builder generationBuilder) {
-        generationBuilder.feature(GenerationStep.Feature.FLUID_SPRINGS, MEADOW_LAKE);
-        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_SPRUCE);
-        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_SPRUCE_SPARSE);
-        generationBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, MEADOW_BUSH);
-    }
+    public static final RegistryEntry<PlacedFeature> HUGE_RED_MUSHROOM = registerToMod(
+            "huge_red_mushroom",
+            TreeConfiguredFeatures.HUGE_RED_MUSHROOM,
+            modifiers(createCountExtraModifier(0, 0.1f, 1))
+    );
+
+    public static final RegistryEntry<PlacedFeature> HUGE_BROWN_MUSHROOM = registerToMod(
+            "huge_brown_mushroom",
+            TreeConfiguredFeatures.HUGE_BROWN_MUSHROOM,
+            modifiers(createCountExtraModifier(0, 0.1f, 1))
+    );
+
 }

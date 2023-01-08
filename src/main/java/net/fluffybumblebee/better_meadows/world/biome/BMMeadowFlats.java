@@ -1,7 +1,6 @@
 package net.fluffybumblebee.better_meadows.world.biome;
 
 import net.fluffybumblebee.better_meadows.util.MeadowDefaults;
-import net.fluffybumblebee.better_meadows.world.feature.BMPlaced;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.Biome;
@@ -26,7 +25,7 @@ public class BMMeadowFlats {
     private static GenerationSettings generationSettings() {
         GenerationSettings.Builder builder = new GenerationSettings.Builder();
         MeadowDefaults.ACCESS.basicFeatures(builder);
-        BMPlaced.addLargeMeadowFeatures(builder);
+        MeadowDefaults.addLargeMeadowFeatures(builder);
         addPlainsTallGrass(builder);
         addForestFlowers(builder);
         addDefaultGrass(builder);
